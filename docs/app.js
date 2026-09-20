@@ -60,3 +60,4 @@ document.addEventListener('click',async event=>{const button=event.target.closes
 document.addEventListener('change',event=>{if(event.target.id==='outside-date'&&event.target.value&&event.target.value<=D.today()){outsideDate=event.target.value;render();}});
 
 let outsideDate=D.today();
+document.addEventListener('click',event=>{const button=event.target.closest('[data-view="outside"]');if(!button||!state)return;event.preventDefault();event.stopImmediatePropagation();view='outside';render();},true);
